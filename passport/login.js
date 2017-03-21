@@ -26,7 +26,14 @@ module.exports = function(passport){
                     }
                     // User and password both match, return user from done method
                     // which will be treated like success
-                    return done(null, user);
+                    user.loggedTime.push(Date())
+                    user.save(function(err) {
+                            if (err){
+                                console.log('Error in noting loggin: '+err);  
+                                throw err;  
+                            }   
+                            return done(null, user);
+                        });
                 }
             );
 

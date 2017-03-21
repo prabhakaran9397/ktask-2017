@@ -1,0 +1,11 @@
+<p>Hello <%= user.username%>,</p>
+Your Details!
+
+<p> Firstname: <%= user.firstName %> </p>
+<p> Lastname: <%= user.lastName %> </p>
+<p> Email: <%= user.email %> </p>
+<p> logged Times: </p>
+<% for(var i=user.loggedTime.length-1; i>=0 ; i--) { %>
+	<p> <%= user.loggedTime[i] %> </p>
+<% } %>
+<p> <a href="/signout">Sign Out</a>
