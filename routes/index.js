@@ -31,7 +31,10 @@ module.exports = function(passport){
 
 	/* GET Registration Page */
 	router.get('/signup', function(req, res){
-		res.render('register',{message: req.flash('message')});
+		if (!req.isAuthenticated())
+			res.render('register',{message: req.flash('message')});
+		else
+			res.redirect('/home');
 	});
 
 	/* Handle Registration POST */
@@ -54,8 +57,3 @@ module.exports = function(passport){
 
 	return router;
 }
-
-
-
-
-
