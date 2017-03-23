@@ -31,6 +31,13 @@ app.use(expressSession({secret: 'thisisatest'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function (req, res, next) {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    next()
+});
+
  // Using the flash middleware provided by connect-flash to store messages in session
  // and displaying in templates
 var flash = require('connect-flash');
