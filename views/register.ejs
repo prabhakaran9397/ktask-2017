@@ -1,12 +1,26 @@
-<form class="register-form" method="POST">
-      <input type="text" name="username" placeholder="username" required/>
-      <input type="password" name="password" placeholder="password" required/>
-      <input type="text" name="email" placeholder="email address" required/>
-      <input type="text" name="firstName" placeholder="first name" required/>
-      <input type="text" name="lastName" placeholder="lastname" required/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="/">Sign In</a></p>
-</form>
-<% if(message.length > 0) { %>
-	<p> MESSAGE: <%= message %>!</p>
-<% } %>
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>K Task!</title>
+  <link rel='stylesheet' href='css/style.css'/>
+</head>
+<body>
+  <div class="login-page">
+	  <div class="form">
+		  <% if(message.length > 0) { %>
+			<p> MESSAGE: <%= message %> </p>
+		  <% } %>
+	    <form class="register-form" action="/signup" method="POST">
+	      <input type="text" name="username" placeholder="username" required/>
+	      <input type="password" name="password" placeholder="password" required/>
+	      <input type="text" name="email" placeholder="email address" required/>
+	      <input type="text" name="firstName" placeholder="first name" required/>
+	      <input type="text" name="lastName" placeholder="lastname" required/>
+	      <button>create</button>
+	      <p class="message">Already registered? <a href="/">Sign In</a></p>
+	    </form>
+	  </div>
+  </div>
+</body>
+</html>

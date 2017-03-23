@@ -1,9 +1,23 @@
-<form class="login-form" action="/login" method="POST">
-      <input type="text" name="username" placeholder="username"/>
-      <input type="password" name="password" placeholder="password"/>
-      <button type="submit">login</button>
-      <p class="message">Not registered? <a href="/signup">Create an account</a></p>
-</form>
-<% if(message.length > 0) { %>
-	<p> MESSAGE: <%= message %>!</p>
-<% } %>
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>K Task!</title>
+  <link rel='stylesheet' href='css/style.css'/>
+</head>
+<body>
+  <div class="login-page">
+	  <div class="form">
+		  <% if(message.length > 0) { %>
+			<p> MESSAGE: <%= message %> </p>
+		  <% } %>
+	    <form class="login-form" action="/login" method="POST">
+	      <input type="text" name="username" placeholder="username"/>
+	      <input type="password" name="password" placeholder="password"/>
+	      <button type="submit">login</button>
+	      <p class="message">Not registered? <a href="/signup">Create an account</a></p>
+	    </form>
+	  </div>
+  </div>
+</body>
+</html>
